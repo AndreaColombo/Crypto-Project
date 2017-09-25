@@ -1,0 +1,1 @@
+-Isrc/STM32F401XE  -ffunction-sections -mlittle-endian -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=gnu11 -ggdb -Os -flto -Wall -Wextra -Wstrict-prototypes -Werror -Wno-error=unused-function -Wno-error=unused-variable -Wfatal-errors -Warray-bounds -Wno-unused-parameter

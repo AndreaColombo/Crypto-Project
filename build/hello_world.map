@@ -1,0 +1,187 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+SystemCoreClock     0x4               build/src/STM32F401XE/gcc_startup_system.o (symbol from plugin)
+ct                  0x10              build/src/main.o (symbol from plugin)
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 build/src/STM32F401XE/gcc_startup_system.o (symbol from plugin)
+ .text          0x0000000000000000        0x0 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ .data          0x0000000000000000        0x0 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ .text          0x0000000000000000        0x0 build/src/STM32F401XE/rijndael-alg-fst.o (symbol from plugin)
+ .text          0x0000000000000000        0x0 build/src/main.o (symbol from plugin)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x0000000008000000 0x0000000000080000 xr
+RAM              0x0000000020000000 0x0000000000018000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/src/STM32F401XE/gcc_startup_system.o
+LOAD /tmp/ccjKAUPn.ltrans0.ltrans.o
+LOAD build/src/STM32F401XE/rijndael-alg-fst.o
+LOAD build/src/main.o
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libm.a
+START GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/armv7e-m/fpu/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libg_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libc_nano.a
+END GROUP
+START GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/armv7e-m/fpu/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libnosys.a
+END GROUP
+START GROUP
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/armv7e-m/fpu/libgcc.a
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/5.4.1/../../../arm-none-eabi/lib/armv7e-m/fpu/libnosys.a
+END GROUP
+
+.text           0x0000000008000000     0x1b4c
+ *(.isr_vector)
+ .isr_vector    0x0000000008000000      0x194 /tmp/ccjKAUPn.ltrans0.ltrans.o
+                0x0000000008000000                __vector_table
+ *(.text*)
+ .text.delay    0x0000000008000194       0x26 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ *fill*         0x00000000080001ba        0x2 
+ .text.startup.main
+                0x00000000080001bc      0x468 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ .text.Default_Handler
+                0x0000000008000624        0x2 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ .text.Reset_Handler
+                0x0000000008000626        0xe /tmp/ccjKAUPn.ltrans0.ltrans.o
+                0x0000000008000626                Reset_Handler
+ .text.ram_init
+                0x0000000008000634       0x3c /tmp/ccjKAUPn.ltrans0.ltrans.o
+ .text.SystemInit
+                0x0000000008000670       0xa4 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ *(.init)
+ *(.fini)
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+ *(.rodata*)
+ .rodata        0x0000000008000714     0x1438 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ *(.eh_frame*)
+
+.glue_7         0x0000000008001b4c        0x0
+ .glue_7        0x0000000008001b4c        0x0 linker stubs
+
+.glue_7t        0x0000000008001b4c        0x0
+ .glue_7t       0x0000000008001b4c        0x0 linker stubs
+
+.vfp11_veneer   0x0000000008001b4c        0x0
+ .vfp11_veneer  0x0000000008001b4c        0x0 linker stubs
+
+.v4_bx          0x0000000008001b4c        0x0
+ .v4_bx         0x0000000008001b4c        0x0 linker stubs
+
+.iplt           0x0000000008001b4c        0x0
+ .iplt          0x0000000008001b4c        0x0 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.rel.dyn        0x0000000008001b4c        0x0
+ .rel.iplt      0x0000000008001b4c        0x0 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+                0x0000000008001b4c                __exidx_start = .
+
+.ARM.exidx
+ *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+                0x0000000008001b4c                __exidx_end = .
+                0x0000000008001b4c                __etext = .
+
+.data           0x0000000020000000        0x0 load address 0x0000000008001b4c
+                0x0000000020000000                __data_start__ = .
+ *(vtable)
+ *(.data*)
+                0x0000000020000000                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end, .)
+                0x0000000020000000                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end, .)
+                0x0000000020000000                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end, .)
+ *(.jcr*)
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                __data_end__ = .
+
+.igot.plt       0x0000000020000000        0x0
+ .igot.plt      0x0000000020000000        0x0 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.bss            0x0000000020000000       0x10
+                0x0000000020000000                . = ALIGN (0x4)
+                0x0000000020000000                __bss_start__ = .
+ *(.bss*)
+ .bss           0x0000000020000000       0x10 /tmp/ccjKAUPn.ltrans0.ltrans.o
+ *(COMMON)
+                0x0000000020000010                . = ALIGN (0x4)
+                0x0000000020000010                __bss_end__ = .
+
+.heap           0x0000000020000010        0x0
+                0x0000000020000010                __end__ = .
+                [!provide]                        PROVIDE (end, .)
+ *(.heap*)
+                0x0000000020000010                __HeapLimit = .
+
+.stack_dummy    0x0000000020000010        0x0
+ *(.stack*)
+                0x0000000020018000                __StackTop = (ORIGIN (RAM) + LENGTH (RAM))
+                0x0000000020018000                __StackLimit = (__StackTop - SIZEOF (.stack_dummy))
+                0x0000000020018000                PROVIDE (__stack, __StackTop)
+                0x0000000000000001                ASSERT ((__StackLimit >= __HeapLimit), region RAM overflowed with stack)
+OUTPUT(build/hello_world.elf elf32-littlearm)
+
+.debug_info     0x0000000000000000      0x4e3
+ .debug_info    0x0000000000000000      0x4e3 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_abbrev   0x0000000000000000      0x26e
+ .debug_abbrev  0x0000000000000000      0x26e /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_loc      0x0000000000000000      0x3c3
+ .debug_loc     0x0000000000000000      0x3c3 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_aranges  0x0000000000000000       0x48
+ .debug_aranges
+                0x0000000000000000       0x48 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_ranges   0x0000000000000000       0x80
+ .debug_ranges  0x0000000000000000       0x80 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_line     0x0000000000000000      0x208
+ .debug_line    0x0000000000000000      0x208 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_str      0x0000000000000000      0x262
+ .debug_str     0x0000000000000000      0x262 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.comment        0x0000000000000000       0x2b
+ .comment       0x0000000000000000       0x2b /tmp/ccjKAUPn.ltrans0.ltrans.o
+                                         0x2c (size before relaxing)
+
+.ARM.attributes
+                0x0000000000000000       0x37
+ .ARM.attributes
+                0x0000000000000000       0x37 /tmp/ccjKAUPn.ltrans0.ltrans.o
+
+.debug_frame    0x0000000000000000       0x8c
+ .debug_frame   0x0000000000000000       0x8c /tmp/ccjKAUPn.ltrans0.ltrans.o
