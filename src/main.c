@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include "rijndael-alg-fst.h"
-#include "serial.h"
+//#include "serial.h"
 
 
 /*
@@ -12,7 +12,7 @@
 #define LED_GPIO        GPIOA
 #define LED_PIN         5
 
-void wait_button(void);
+//void wait_button(void);
 /**
  * Quick 'n' dirty delay
  *
@@ -36,6 +36,7 @@ static const u8 expected_ct[16] = {
 };
 
 u8 ct[16];
+u8 pt2[16];
 u32 rk[128];
 /**
  * Hello world blinky program
@@ -54,6 +55,12 @@ int main(void) {
     for(int i=0;i<16 && cnt;i++)
         if(ct[i]!=expected_ct[i])
            cnt=0;
+
+    nr=rijndaelKeySetupDec(rk, aes_test_user_key, 128);
+    rijndaelDecrypt(rk, nr, ct, pt2);
+    for(int i=0;i<16 && cnt;i++)
+        if(pt[i]!=pt2[i])
+           cnt=0;
     /*
      * Turn on the GPIOA unit,
      * -> see section 6.3.9 in the manual
@@ -67,11 +74,11 @@ int main(void) {
      * as input before, as it is when it comes out of reset.
      * -> see section 8.4.1 in the manual
      */
-    LED_GPIO->MODER=0;
+    //LED_GPIO->MODER=0;
     LED_GPIO->MODER |= (0b01 << (LED_PIN << 1));
     
     if(cnt)
-       del=200;
+       del=20;
     else
         del=2000;
     //wait_button();
@@ -99,7 +106,7 @@ int main(void) {
     }
 }
 
-void wait_button(void) {
+/*void wait_button(void) {
   while (!((LED_GPIO->IDR) & (1<<0))) {}
 }
-
+*/
